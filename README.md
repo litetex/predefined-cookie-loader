@@ -1,2 +1,3 @@
-# ![logo](src/icons/icon48.png) predefined-cookie-loader
+# predefined-cookie-loader ![logo](src/icons/icon96.png)
+
 Loads, overrides and sets predefined cookies into your browser
