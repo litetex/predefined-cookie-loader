@@ -1,0 +1,21 @@
+a, input, button {
+    cursor: pointer;
+}
+
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container-v {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-child-autogrow {
+    flex: 1 1 auto;
+}
+
+.flex-child-contentsize {
+    flex: 0 1 auto;
+}

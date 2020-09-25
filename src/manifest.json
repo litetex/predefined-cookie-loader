@@ -20,6 +20,9 @@
       "open_in_tab": true,
       "page": "options/options.html"
     },
+    "permissions": [
+      "storage"
+    ],
 
     "default_locale": "en",
     "manifest_version": 2
