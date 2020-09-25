@@ -1,6 +1,6 @@
 "use strict";
 
-document.title = browser.i18n.getMessage("extensionName") + " Menu";
+document.title = chrome.i18n.getMessage("extensionName") + " Menu";
 
 function buildActions() {
     const actions = document.getElementById('actions');
@@ -8,11 +8,11 @@ function buildActions() {
         {
             label: "settings",
             action: function() {
-                if (browser.runtime && browser.runtime.openOptionsPage){
-                    browser.runtime.openOptionsPage();
+                if (chrome.runtime && chrome.runtime.openOptionsPage){
+                    chrome.runtime.openOptionsPage();
                 }
                 else {
-                    window.open(browser.extension.getURL("options/options.html"), "_blank");
+                    window.open(chrome.extension.getURL("options/options.html"), "_blank");
                 }
             }
         }
