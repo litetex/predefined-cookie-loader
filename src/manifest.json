@@ -25,7 +25,6 @@
 		"http://*/*",
 		"https://*/*",
     "cookies",
-    "tabs",
 		"storage"
     ],
 	"background": {

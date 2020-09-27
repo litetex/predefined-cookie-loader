@@ -36,6 +36,8 @@ function save() {
             restoreOptions();
         })
 
+        browser.runtime.sendMessage({});
+
     } catch (e) {
         console.error("Failed to save", e);
         document.getElementById("save-result").textContent = "Unable to save: " + e.message;
