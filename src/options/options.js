@@ -18,7 +18,7 @@ function restoreOptions() {
     chrome.storage.local.get({
         preLoadCookies: new Map()
     }, function(data) {
-        document.getElementById("cookiesForPreload").value = JSON.stringify(strMapToObj(data.preLoadCookies));
+        document.getElementById("cookiesForPreload").value = JSON.stringify(strMapToObj(data.preLoadCookies), null, 2);
     });
 }
 
@@ -36,7 +36,7 @@ function save() {
             restoreOptions();
         })
 
-        browser.runtime.sendMessage({});
+        chrome.runtime.sendMessage({});
 
     } catch (e) {
         console.error("Failed to save", e);

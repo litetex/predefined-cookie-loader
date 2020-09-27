@@ -29,5 +29,5 @@ function loadDefaultCookies() {
   });
 }
 
-browser.runtime.onStartup.addListener(loadDefaultCookies);
-browser.runtime.onMessage.addListener(loadDefaultCookies);
+chrome.runtime.onStartup.addListener(loadDefaultCookies);
+chrome.runtime.onMessage.addListener(loadDefaultCookies);
