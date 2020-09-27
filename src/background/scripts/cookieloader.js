@@ -16,7 +16,12 @@ function loadDefaultCookies() {
         console.log("Processing: '" + origin + "'");
 
         value.forEach(cookie => {
+
           let cookieToSet = Object.assign({ url: origin }, cookie);
+          if(!cookieToSet.domain) {
+            cookieToSet.domain = "." + key;
+          }
+          
           console.log(cookieToSet);
 
           chrome.cookies.set(cookieToSet);
