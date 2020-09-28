@@ -19,6 +19,7 @@ And when you start it again everything is full of "We use cookies"-popups?<br/>
 <img src="assets/CookiePopupExample.png" height=264></img>
 
 Now you can preload the corresponding cookies and surf 🏄‍ the web in peace ✌️
+##### Example configuration
 ```JSON
 {
   "<wellknownSearchEngine>.com": [
