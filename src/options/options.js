@@ -1,15 +1,27 @@
 "use strict";
 
-document.title = browser.i18n.getMessage("extensionName") + " Options";
+document.title = browser.i18n.getMessage("extensionName") + chrome.i18n.getMessage("settings");
 
 function initUI() {
     // TODO I18N
-    document.getElementById("title").textContent = "Options";
+    document.getElementById("title").textContent = chrome.i18n.getMessage("settings");
 
-    document.getElementById("cookiesForPreloadHeader").textContent = "Cookies for preload";
-    document.getElementById("cookiesForPreloadFormat").textContent = "Format: {\"domain.com\":[{\"name\":\"Cookie1\",\"value\":\"Val1\" },{\"name\":\"Cookie2\",\"value\":\"Val2\"}]}";
+    document.getElementById("cookiesForPreloadHeader").textContent = chrome.i18n.getMessage("cookies_for_preload");
 
-    document.getElementById("save").value = "Save and Reload";
+    let preLoadCookies = new Map();
+    preLoadCookies.set(
+        "domain.example", [
+        { name: "DomainCookie1", value: "Val1" },
+        { name: "DomainCookie2", value: "Val2", domain: "sub.domain.example", path: "/path", secure: true }
+    ]);
+    preLoadCookies.set(
+        "domain2.example", [
+        { name: "Domain2Cookie1", value: "Val1", secure: true }
+    ]);
+
+    document.getElementById("cookiesForPreload").placeholder = JSON.stringify(strMapToObj(preLoadCookies), null, 2);
+
+    document.getElementById("save").value = chrome.i18n.getMessage("save");
 
     document.getElementById("save").addEventListener("click", save);
 }
@@ -17,8 +29,11 @@ function initUI() {
 function restoreOptions() {
     chrome.storage.local.get({
         preLoadCookies: new Map()
-    }, function(data) {
-        document.getElementById("cookiesForPreload").value = JSON.stringify(strMapToObj(data.preLoadCookies), null, 2);
+    }, function (data) {
+        document.getElementById("cookiesForPreload").value =
+            (data.preLoadCookies && data.preLoadCookies instanceof Map && data.preLoadCookies.size !== 0) ?
+                JSON.stringify(strMapToObj(data.preLoadCookies), null, 2) :
+                "";
     });
 }
 
@@ -27,11 +42,15 @@ function save() {
     document.getElementById("save-result").textContent = "⌛";
     document.getElementById("save-result").classList.remove("save-failed");
 
+    let docVal = document.getElementById("cookiesForPreload").value;
     try {
+        if (!docVal) {
+            docVal = "{}";
+        }
+
         chrome.storage.local.set({
-            // TypeScript???
-            preLoadCookies: objToStrMap(JSON.parse(document.getElementById("cookiesForPreload").value))
-        }, function() {
+            preLoadCookies: objToStrMap(JSON.parse(docVal))
+        }, function () {
             document.getElementById("save-result").textContent = "✔️";
             restoreOptions();
         })
@@ -47,7 +66,7 @@ function save() {
 
 function strMapToObj(strMap) {
     let obj = Object.create(null);
-    for (let [k,v] of strMap) {
+    for (let [k, v] of strMap) {
         obj[k] = v;
     }
     return obj;

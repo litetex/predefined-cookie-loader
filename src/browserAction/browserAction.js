@@ -7,8 +7,8 @@ function buildActions() {
     [
         {
             label: "settings",
-            action: function() {
-                if (chrome.runtime && chrome.runtime.openOptionsPage){
+            action: function () {
+                if (chrome.runtime && chrome.runtime.openOptionsPage) {
                     chrome.runtime.openOptionsPage();
                 }
                 else {
@@ -16,10 +16,10 @@ function buildActions() {
                 }
             }
         }
-    ].forEach(function(action) {
+    ].forEach(function (action) {
         const btnAction = document.createElement("button");
         btnAction.className = "action";
-        
+
         btnAction.appendChild(
             document.createTextNode(
                 browser.i18n.getMessage("browserAction_" + action.label) || action.label

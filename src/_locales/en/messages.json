@@ -14,5 +14,17 @@
     "browserAction_settings" : {
         "message": "Settings",
         "description": "Opens the settings page"
+    },
+    "settings" : {
+        "message": "Settings",
+        "description": "settings"
+    },
+    "save" : {
+        "message": "Save",
+        "description": "save"
+    },
+    "cookies_for_preload": {
+        "message": "Cookies for preload",
+        "description": "Cookies for preload"
     }
 }

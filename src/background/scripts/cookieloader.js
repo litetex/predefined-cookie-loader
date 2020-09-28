@@ -3,14 +3,14 @@
 function loadDefaultCookies() {
   chrome.storage.local.get({
     preLoadCookies: new Map()
-  }, function(data) {
+  }, function (data) {
 
     try {
-      if(!data.preLoadCookies || !(data.preLoadCookies instanceof Map)) {
+      if (!data.preLoadCookies || !(data.preLoadCookies instanceof Map)) {
         return;
       }
 
-      data.preLoadCookies.forEach(function(value, key, map) {
+      data.preLoadCookies.forEach(function (value, key, map) {
         let origin = "https://" + key;
 
         console.log("Processing: '" + origin + "'");
@@ -18,16 +18,16 @@ function loadDefaultCookies() {
         value.forEach(cookie => {
 
           let cookieToSet = Object.assign({ url: origin }, cookie);
-          if(!cookieToSet.domain) {
+          if (!cookieToSet.domain) {
             cookieToSet.domain = "." + key;
           }
-          
+
           console.log(cookieToSet);
 
           chrome.cookies.set(cookieToSet);
         });
       });
-      
+
     } catch (e) {
       console.error(e);
     }
