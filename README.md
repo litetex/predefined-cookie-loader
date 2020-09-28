@@ -7,7 +7,7 @@
 Loads, overrides and sets predefined 🍪 cookies into the browser 
 
 ## Install
-Install as [Firefox-Addon]()
+Install as [Firefox-Addon](https://addons.mozilla.org/en-US/firefox/addon/predefined-cookie-loader/)
 
 ## Use cases
 ### Private browsing
