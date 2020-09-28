@@ -30,10 +30,10 @@ jobs:
     - run: npm install
       working-directory: src
 
-    - run: npm run web-ext lint
+    - run: npm run web-ext lint -- --ignore-files=package*.json
       working-directory: src
       
-    - run: npm run web-ext build
+    - run: npm run web-ext build -- --ignore-files=package*.json
       working-directory: src
       
     - uses: actions/upload-artifact@v2
