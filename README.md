@@ -4,7 +4,7 @@
 
 # predefined-cookie-loader <img src="src/icons/icon96.png" width=56></img>
 
-Loads, overrides and sets predefined 🍪 cookies into the browser 
+A browser extension that loads predefined 🍪 cookies into the browser 
 
 ## Install
 Install from 
