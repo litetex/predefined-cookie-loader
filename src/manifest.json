@@ -1,0 +1,33 @@
+{
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "1.0.0",
+  "homepage_url": "https://github.com/litetex/predefined-cookie-loader",
+  "author": "litetex",
+  "icons": {
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png"
+  },
+  "browser_action": {
+    "browser_style": true,
+    "default_title": "__MSG_extensionNameShort__",
+    "default_popup": "browserAction/browserAction.html"
+  },
+  "options_ui": {
+    "open_in_tab": true,
+    "page": "options/options.html"
+  },
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "cookies",
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "background/scripts/cookieloader.js"
+    ]
+  },
+  "default_locale": "en",
+  "manifest_version": 2
+}

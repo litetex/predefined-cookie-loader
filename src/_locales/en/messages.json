@@ -1,0 +1,30 @@
+{
+    "extensionName" : {
+        "message": "Predefined Cookie Loader",
+        "description": "Name of the extension"
+    },
+    "extensionNameShort" : {
+        "message": "PreCookieLoader",
+        "description": "Short name of the extension"
+    },
+    "extensionDescription" : {
+        "message": "Loads, overrides and sets predefined cookies",
+        "description": "Description of the extension"
+    },
+    "browserAction_settings" : {
+        "message": "Settings",
+        "description": "Opens the settings page"
+    },
+    "settings" : {
+        "message": "Settings",
+        "description": "settings"
+    },
+    "save" : {
+        "message": "Save",
+        "description": "save"
+    },
+    "cookies_for_preload": {
+        "message": "Cookies for preload",
+        "description": "Cookies for preload"
+    }
+}
