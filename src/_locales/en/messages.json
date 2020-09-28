@@ -8,7 +8,7 @@
         "description": "Short name of the extension"
     },
     "extensionDescription" : {
-        "message": "Loads, overrides and sets predefined cookies",
+        "message": "A browser extension that loads predefined 🍪 cookies into the browser",
         "description": "Description of the extension"
     },
     "browserAction_settings" : {
