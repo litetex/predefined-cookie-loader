@@ -1,0 +1,39 @@
+name: Master CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - run: npm install
+      working-directory: src
+
+    - run: npm run web-ext lint
+      working-directory: src
+      
+    - run: npm run web-ext build
+      working-directory: src
+      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: built-artifacts
+        path: src/web-ext-artifacts/
