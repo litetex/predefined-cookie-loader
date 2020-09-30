@@ -1,6 +1,6 @@
 "use strict";
 
-document.title = chrome.i18n.getMessage("extensionName") + " Menu";
+document.title = chrome.i18n.getMessage("extensionName");
 
 function buildActions() {
     const actions = document.getElementById('actions');
@@ -18,7 +18,7 @@ function buildActions() {
         }
     ].forEach(function (action) {
         const btnAction = document.createElement("button");
-        btnAction.className = "action";
+        btnAction.className = "action-btn";
 
         btnAction.appendChild(
             document.createTextNode(

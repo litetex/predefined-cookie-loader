@@ -6,7 +6,7 @@ html, body {
 
 h2 {
     margin: 0;
-    margin-top: 0.5em;
+    margin-top: 0.2em;
     margin-bottom: 0.25em;
 }
 
@@ -25,12 +25,13 @@ h4 {
     align-self: stretch;
 }
 
-#save {
-    font-size: large;
-}
-
 #save-block {
     align-items: baseline;
+    margin-top: 0.2em;
+}
+
+#save {
+    font-size: large;
 }
 
 .save-failed {

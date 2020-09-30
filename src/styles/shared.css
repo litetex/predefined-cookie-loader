@@ -1,7 +1,51 @@
-a, input, button {
+:root {
+    --background-color: white;
+    --element-background-color: white;
+    --element-highlight-background-color: rgb(200, 200, 200);
+    --text-color: black;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: rgb(74, 74, 74);
+        --element-background-color: rgba(0, 0, 0, 0.1);
+        --element-highlight-background-color: rgb(50, 50, 50);
+        --text-color: rgb(252, 252, 252);
+    }
+}
+
+html {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+a, button {
     cursor: pointer;
 }
 
+input, button, textarea {
+    background-color: var(--element-background-color);
+    color: var(--text-color);
+    border-radius: 3px;
+	padding: 1px;
+}
+
+button, textarea {
+    border: 1px solid lightgray;
+}
+
+button {
+    padding: 0.2em 0.4em;
+}
+
+button:hover {
+	background-color: var(--element-highlight-background-color);
+}
+
+button:focus {
+	border-style: dashed;
+}
 
 .flex-container {
     display: flex;
