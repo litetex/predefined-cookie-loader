@@ -40,3 +40,9 @@ jobs:
       with:
         name: built-artifacts
         path: src/web-ext-artifacts/
+        
+    - name: Release - Create Draft for Release
+      id: create_draft
+      uses: release-drafter/release-drafter@v5
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
