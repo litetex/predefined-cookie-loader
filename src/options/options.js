@@ -1,6 +1,6 @@
 "use strict";
 
-document.title = browser.i18n.getMessage("extensionName") + chrome.i18n.getMessage("settings");
+document.title = browser.i18n.getMessage("extensionName") + " " + chrome.i18n.getMessage("settings");
 
 function initUI() {
     // TODO I18N
