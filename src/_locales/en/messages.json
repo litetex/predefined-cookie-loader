@@ -3,10 +3,6 @@
         "message": "Predefined Cookie Loader",
         "description": "Name of the extension"
     },
-    "extensionNameShort" : {
-        "message": "PreCookieLoader",
-        "description": "Short name of the extension"
-    },
     "extensionDescription" : {
         "message": "A browser extension that loads predefined 🍪 cookies into the browser",
         "description": "Description of the extension"
