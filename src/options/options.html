@@ -2,6 +2,7 @@
     <head>
         <link href="../styles/shared.css" rel="stylesheet" type="text/css">
         <link href="options.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="../icons/icon96.png">
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -9,12 +10,22 @@
         <div id="options" class="flex-container-v flex-child-autogrow">
 
             <h2 id="title"></h2>
-
-            <h4 id="cookiesForPreloadHeader"></h4>
+            
+            <div>
+                <input id="chbxDomainNotPresentPrefixWithDot" type="checkbox">
+                <label for="chbxDomainNotPresentPrefixWithDot" id="chbxDomainNotPresentPrefixWithDotLabel"></label>
+            </div>
+            
+            <div id="cookieSettingsBlock1" class="flex-container">
+                <h4 id="cookiesForPreloadHeader"></h4>
+                <a href="https://github.com/litetex/predefined-cookie-loader/wiki/Considerations-when-setting-cookies" target="_blank">
+                    Considerations when setting cookies
+                </a>
+            </div>
             <textarea id="cookiesForPreload" class="flex-child-autogrow" spellcheck="false"></textarea>
 
             <div id="save-block" class="flex-container flex-child-contentsize">
-                <input type="button" id="save" class="flex-child-contentsize"/>
+                <button id="save" class="flex-child-contentsize"></button>
                 <span id="save-result" ></span>
             </div>
         </div>

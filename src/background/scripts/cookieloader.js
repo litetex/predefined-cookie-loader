@@ -2,6 +2,7 @@
 
 function loadDefaultCookies() {
   chrome.storage.local.get({
+    domainNotPresentPrefixWithDot: true,
     preLoadCookies: new Map()
   }, function (data) {
 
@@ -11,18 +12,21 @@ function loadDefaultCookies() {
       }
 
       data.preLoadCookies.forEach(function (value, key, map) {
-        let origin = "https://" + key;
-
-        console.log("Processing: '" + origin + "'");
+        
+        console.log("Processing: '" + key + "'");
 
         value.forEach(cookie => {
+          let origin = "https://" + key;
+          console.log("Cookie before processing", cookie);
 
           let cookieToSet = Object.assign({ url: origin }, cookie);
-          if (!cookieToSet.domain) {
+
+          // If fix cookies which have no domain
+          if (data.domainNotPresentPrefixWithDot && !cookieToSet.domain) {
             cookieToSet.domain = "." + key;
           }
 
-          console.log(cookieToSet);
+          console.log("Cookie to set (after processing)", cookieToSet);
 
           chrome.cookies.set(cookieToSet);
         });

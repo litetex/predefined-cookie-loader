@@ -3,12 +3,8 @@
         "message": "Predefined Cookie Loader",
         "description": "Name of the extension"
     },
-    "extensionNameShort" : {
-        "message": "PreCookieLoader",
-        "description": "Short name of the extension"
-    },
     "extensionDescription" : {
-        "message": "Loads, overrides and sets predefined cookies",
+        "message": "A browser extension that loads predefined 🍪 cookies into the browser",
         "description": "Description of the extension"
     },
     "browserAction_settings" : {
@@ -23,8 +19,12 @@
         "message": "Save",
         "description": "save"
     },
-    "cookies_for_preload": {
+    "setting_cookies_for_preload": {
         "message": "Cookies for preload",
-        "description": "Cookies for preload"
+        "description": "Setting: Cookies for preload"
+    },
+    "setting_domain_not_present_prefix_with_dot": {
+        "message": "If the domain-Attribute is not set, prefix it (based from the url where to set the cookie) with a dot, e.g. url: \"abc.de\" → domain: \".abc.de\"",
+        "description": "Setting: If the domain is not set, prefix it (based from the url where to set the cookie) with a dot"
     }
 }

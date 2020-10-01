@@ -30,13 +30,19 @@ jobs:
     - run: npm install
       working-directory: src
 
-    - run: npm run web-ext lint
+    - run: npm run web-ext lint -- --ignore-files=package*.json
       working-directory: src
       
-    - run: npm run web-ext build
+    - run: npm run web-ext build -- --ignore-files=package*.json
       working-directory: src
       
     - uses: actions/upload-artifact@v2
       with:
         name: built-artifacts
         path: src/web-ext-artifacts/
+        
+    - name: Release - Create Draft for Release
+      id: create_draft
+      uses: release-drafter/release-drafter@v5
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

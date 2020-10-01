@@ -6,14 +6,14 @@ html, body {
 
 h2 {
     margin: 0;
-    margin-top: 0.5em;
-    margin-bottom: 0.25em;
+    margin-top: 0.2em;
+    margin-bottom: 0.3em;
 }
 
 h4 {
     margin: 0;
-    margin-top: 0.3em;
-    margin-bottom: 0.15em;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
 }
 
 #options {
@@ -21,16 +21,23 @@ h4 {
     align-items: flex-start;
 }
 
+#cookieSettingsBlock1 {
+    justify-content: space-between;
+    align-items: baseline;
+    align-self: stretch;
+}
+
 #cookiesForPreload {
     align-self: stretch;
 }
 
-#save {
-    font-size: large;
-}
-
 #save-block {
     align-items: baseline;
+    margin-top: 0.2em;
+}
+
+#save {
+    font-size: large;
 }
 
 .save-failed {
