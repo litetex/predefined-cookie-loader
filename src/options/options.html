@@ -10,8 +10,18 @@
         <div id="options" class="flex-container-v flex-child-autogrow">
 
             <h2 id="title"></h2>
-
-            <h4 id="cookiesForPreloadHeader"></h4>
+            
+            <div>
+                <input id="chbxDomainNotPresentPrefixWithDot" type="checkbox">
+                <label for="chbxDomainNotPresentPrefixWithDot" id="chbxDomainNotPresentPrefixWithDotLabel"></label>
+            </div>
+            
+            <div id="cookieSettingsBlock1" class="flex-container">
+                <h4 id="cookiesForPreloadHeader"></h4>
+                <a href="https://github.com/litetex/predefined-cookie-loader/wiki/Considerations-when-setting-cookies" target="_blank">
+                    Considerations when setting cookies
+                </a>
+            </div>
             <textarea id="cookiesForPreload" class="flex-child-autogrow" spellcheck="false"></textarea>
 
             <div id="save-block" class="flex-container flex-child-contentsize">

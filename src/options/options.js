@@ -5,7 +5,8 @@ document.title = chrome.i18n.getMessage("settings");
 function initUI() {
     document.getElementById("title").textContent = chrome.i18n.getMessage("settings");
 
-    document.getElementById("cookiesForPreloadHeader").textContent = chrome.i18n.getMessage("cookies_for_preload");
+    document.getElementById("chbxDomainNotPresentPrefixWithDotLabel").textContent = chrome.i18n.getMessage("setting_domain_not_present_prefix_with_dot");
+    document.getElementById("cookiesForPreloadHeader").textContent = chrome.i18n.getMessage("setting_cookies_for_preload");
 
     let preLoadCookies = new Map();
     preLoadCookies.set(
@@ -31,8 +32,10 @@ function initUI() {
 
 function restoreOptions() {
     chrome.storage.local.get({
+        domainNotPresentPrefixWithDot: true,
         preLoadCookies: new Map()
     }, function (data) {
+        document.getElementById("chbxDomainNotPresentPrefixWithDot").checked = data.domainNotPresentPrefixWithDot;
         document.getElementById("cookiesForPreload").value =
             (data.preLoadCookies && data.preLoadCookies instanceof Map && data.preLoadCookies.size !== 0) ?
                 JSON.stringify(strMapToObj(data.preLoadCookies), null, 2) :
@@ -52,6 +55,7 @@ function save() {
         }
 
         chrome.storage.local.set({
+            domainNotPresentPrefixWithDot: document.getElementById("chbxDomainNotPresentPrefixWithDot").checked,
             preLoadCookies: objToStrMap(JSON.parse(docVal))
         }, function () {
             document.getElementById("save-result").textContent = "✔️";
