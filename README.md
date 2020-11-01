@@ -5,7 +5,7 @@
 [![build develop](https://img.shields.io/github/workflow/status/litetex/predefined-cookie-loader/Develop%20CI?label=build%20develop)](https://github.com/litetex/predefined-cookie-loader/actions?query=workflow%3A%22Develop+CI%22)
 [![Known Vulnerabilities](https://snyk.io/test/github/litetex/predefined-cookie-loader/badge.svg?targetFile=src/package.json)](https://snyk.io/test/github/litetex/predefined-cookie-loader?targetFile=src/package.json)
 
-# predefined-cookie-loader <img src="src/icons/icon96.png" width=56></img>
+# predefined-cookie-loader <img src="src/icons/icon96.png" width=52 />
 
 A browser extension that loads predefined 🍪 cookies into the browser 
 
