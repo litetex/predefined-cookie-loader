@@ -3,6 +3,10 @@
     --element-background-color: white;
     --element-highlight-background-color: rgb(200, 200, 200);
     --text-color: black;
+
+    --link-unclicked: blue;
+    --link-active: red;
+    --link-visited: rgb(85, 26, 139);
 }
 
 /* Dark mode */
@@ -11,7 +15,10 @@
         --background-color: rgb(74, 74, 74);
         --element-background-color: rgba(0, 0, 0, 0.1);
         --element-highlight-background-color: rgb(50, 50, 50);
-        --text-color: rgb(252, 252, 252);
+        --text-color: rgb(245, 245, 245);
+        --link-unclicked: #00bfbf;
+        --link-active: darkorange;
+        --link-visited: rgb(209, 159, 255);
     }
 }
 
@@ -22,6 +29,18 @@ html {
 
 a, button {
     cursor: pointer;
+}
+
+a:link {
+    color: var(--link-visited);
+}
+
+a:active {
+    color: var(--link-active);
+}
+
+a:visited {
+    color: var(--link-visited);
 }
 
 input, button, textarea {
