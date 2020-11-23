@@ -5,7 +5,7 @@
   "directories": {},
   "dependencies": {},
   "devDependencies": {
-    "web-ext": "^5.3.0"
+    "web-ext": "^5.4.0"
   },
   "scripts": {
     "web-ext": "web-ext"
