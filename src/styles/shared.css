@@ -32,7 +32,7 @@ a, button {
 }
 
 a:link {
-    color: var(--link-visited);
+    color: var(--link-unclicked);
 }
 
 a:active {
