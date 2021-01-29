@@ -1,12 +1,16 @@
 "use strict";
 
-document.title = chrome.i18n.getMessage("settings");
+document.title = translate('settings');
+
+let h2Title = document.getElementById('title');
+let taCookiesForPreload = document.getElementById("cookiesForPreload");
+let chbxDomainNotPresentPrefixWithDot = document.getElementById('chbxDomainNotPresentPrefixWithDot');
 
 function initUI() {
-    document.getElementById("title").textContent = chrome.i18n.getMessage("settings");
+    h2Title.textContent = translate("settings");
 
-    document.getElementById("chbxDomainNotPresentPrefixWithDotLabel").textContent = chrome.i18n.getMessage("setting_domain_not_present_prefix_with_dot");
-    document.getElementById("cookiesForPreloadHeader").textContent = chrome.i18n.getMessage("setting_cookies_for_preload");
+    document.getElementById("chbxDomainNotPresentPrefixWithDotLabel").textContent = translate("setting_domain_not_present_prefix_with_dot");
+    document.getElementById("cookiesForPreloadHeader").textContent = translate("setting_cookies_for_preload");
 
     let preLoadCookies = new Map();
     preLoadCookies.set(
@@ -23,11 +27,11 @@ function initUI() {
         ]
     );
 
-    document.getElementById("cookiesForPreload").placeholder = JSON.stringify(strMapToObj(preLoadCookies), null, 2);
+    taCookiesForPreload.placeholder = JSON.stringify(strMapToObj(preLoadCookies), null, 2);
 
-    document.getElementById("save").textContent = chrome.i18n.getMessage("save");
-
-    document.getElementById("save").addEventListener("click", save);
+    let btnSave = document.getElementById("save");
+    btnSave.textContent = translate("save");
+    btnSave.addEventListener("click", save);
 }
 
 function restoreOptions() {
@@ -35,7 +39,7 @@ function restoreOptions() {
         domainNotPresentPrefixWithDot: true,
         preLoadCookies: new Map()
     }, function (data) {
-        document.getElementById("chbxDomainNotPresentPrefixWithDot").checked = data.domainNotPresentPrefixWithDot;
+        chbxDomainNotPresentPrefixWithDot.checked = data.domainNotPresentPrefixWithDot;
         document.getElementById("cookiesForPreload").value =
             (data.preLoadCookies && data.preLoadCookies instanceof Map && data.preLoadCookies.size !== 0) ?
                 JSON.stringify(strMapToObj(data.preLoadCookies), null, 2) :
@@ -45,20 +49,21 @@ function restoreOptions() {
 
 
 function save() {
-    document.getElementById("save-result").textContent = "⌛";
-    document.getElementById("save-result").classList.remove("save-failed");
+    let saveResultElement = document.getElementById("save-result");
+    saveResultElement.textContent = "⌛";
+    saveResultElement.classList.remove("save-failed");
 
-    let docVal = document.getElementById("cookiesForPreload").value;
+    let docVal = taCookiesForPreload.value;
     try {
         if (!docVal) {
             docVal = "{}";
         }
 
         chrome.storage.local.set({
-            domainNotPresentPrefixWithDot: document.getElementById("chbxDomainNotPresentPrefixWithDot").checked,
+            domainNotPresentPrefixWithDot: chbxDomainNotPresentPrefixWithDot.checked,
             preLoadCookies: objToStrMap(JSON.parse(docVal))
         }, function () {
-            document.getElementById("save-result").textContent = "✔️";
+            saveResultElement.textContent = "✔️";
             restoreOptions();
         })
 
@@ -66,8 +71,8 @@ function save() {
 
     } catch (e) {
         console.error("Failed to save", e);
-        document.getElementById("save-result").textContent = "Unable to save: " + e.message;
-        document.getElementById("save-result").classList.add("save-failed");
+        saveResultElement.textContent = "Unable to save: " + e.message;
+        saveResultElement.classList.add("save-failed");
     }
 }
 
@@ -85,6 +90,10 @@ function objToStrMap(obj) {
         strMap.set(k, obj[k]);
     }
     return strMap;
+}
+
+function translate(key) {
+    return chrome.i18n.getMessage(key);
 }
 
 initUI();
