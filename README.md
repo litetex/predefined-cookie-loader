@@ -26,14 +26,14 @@ Now you can preload the corresponding cookies and surf 🏄‍ the web in peace
   "<wellknownSearchEngine>.com": [
     {
       "name": "CONSENT",
-      "value": "YES+undefined.undefined+V14+undefined",
+      "value": "YES+",
       "secure": true
     }
   ],
   "<wellknownVideoPlatform>.com": [
     {
       "name": "CONSENT",
-      "value": "YES+undefined.undefined+V14+undefined",
+      "value": "YES+",
       "secure": true
     }
   ]
