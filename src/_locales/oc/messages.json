@@ -20,7 +20,7 @@
         "description": "enregistrar"
     },
     "setting_cookies_for_preload": {
-        "message": "Cookies ep precargament",
+        "message": "Cookies pel precargament",
         "description": "Paramètres : cookies pel precargament"
     },
     "setting_domain_not_present_prefix_with_dot": {
