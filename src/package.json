@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Loads, overrides and sets predefined cookies into the browser",
   "directories": {},
-  "dependencies": {},
   "devDependencies": {
     "web-ext": "^6.6.0"
   },
