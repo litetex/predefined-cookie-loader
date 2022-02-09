@@ -4,7 +4,7 @@
   "description": "Loads, overrides and sets predefined cookies into the browser",
   "directories": {},
   "devDependencies": {
-    "web-ext": "^6.6.0"
+    "web-ext": "^6.7.0"
   },
   "scripts": {
     "web-ext": "web-ext"
