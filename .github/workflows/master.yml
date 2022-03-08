@@ -27,7 +27,7 @@ jobs:
     - run: npm ci
       working-directory: src
       
-    - run: npm install
+    - run: npm install --ignore-scripts
       working-directory: src
 
     - run: npm run web-ext lint -- --ignore-files=package*.json
