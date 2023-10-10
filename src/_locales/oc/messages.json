@@ -1,0 +1,30 @@
+{
+    "extensionName" : {
+        "message": "Predefined Cookie Loader",
+        "description": "Lo nom de l'extension"
+    },
+    "extensionDescription" : {
+        "message": "Una extension de navegador que carga los 🍪 cookies predefinits dins lo navegador",
+        "description": "Descripcion de l'extension"
+    },
+    "browserAction_settings" : {
+        "message": "Paramètress",
+        "description": "Dobrir los paramètres de la pagina"
+    },
+    "settings" : {
+        "message": "Paramètres",
+        "description": "paramètres"
+    },
+    "save" : {
+        "message": "Enregistrar",
+        "description": "enregistrar"
+    },
+    "setting_cookies_for_preload": {
+        "message": "Cookies pel precargament",
+        "description": "Paramètres : cookies pel precargament"
+    },
+    "setting_domain_not_present_prefix_with_dot": {
+        "message": "Se lo domain-Attribute es pas definit, lo traire de l'url e lo prefixar amb un punt, e.g. url: \"abc.de\" → domain: \".abc.de\"",
+        "description": "Paramètres : se lo domeni es pas definit, lo traire de l'url e lo prefixar amb un punt"
+    }
+}
