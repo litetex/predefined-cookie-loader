@@ -1,15 +1,13 @@
-# <img src="src/icons/icon96.png" width=46 /> predefined-cookie-loader [![Latest Version](https://img.shields.io/github/v/release/litetex/predefined-cookie-loader?style=flat-square&color=9e7549)](https://github.com/litetex/predefined-cookie-loader/releases) [![Firefox Addon](https://img.shields.io/badge/firefox-addon-ff4c37.svg?logo=firefox-browser&labelColor=5936b0)](https://addons.mozilla.org/en-US/firefox/addon/predefined-cookie-loader/) [![Known Vulnerabilities](https://snyk.io/test/github/litetex/predefined-cookie-loader/badge.svg?targetFile=src/package.json)](https://snyk.io/test/github/litetex/predefined-cookie-loader?targetFile=src/package.json)
+[![Latest Version](https://img.shields.io/github/v/release/litetex/predefined-cookie-loader?style=flat-square&color=9e7549)](https://github.com/litetex/predefined-cookie-loader/releases)
+[![build](https://img.shields.io/github/actions/workflow/status/litetex/predefined-cookie-loader/checkBuild.yml?branch=develop)](https://github.com/litetex/TopGHRepos/actions/workflows/checkBuild.yml?branch%3Adevelop)
+[![Firefox Addon](https://img.shields.io/badge/firefox-addon-ff4c37.svg?logo=firefox-browser&labelColor=5936b0)](https://addons.mozilla.org/en-US/firefox/addon/predefined-cookie-loader/)
+
+# <img src="src/icons/icon96.png" width=46 /> predefined-cookie-loader 
 
 A browser extension that loads predefined 🍪 cookies into the browser 
 
 ## Install
 * [Firefox-Addons](https://addons.mozilla.org/en-US/firefox/addon/predefined-cookie-loader/)
-
-## Build status
-| Branch | Build |
-| --- | --- |
-| ``master`` | [![build](https://img.shields.io/github/workflow/status/litetex/predefined-cookie-loader/Master%20CI)](https://github.com/litetex/predefined-cookie-loader/actions?query=workflow%3A%22Master+CI%22) |
-| ``develop`` | [![build develop](https://img.shields.io/github/workflow/status/litetex/predefined-cookie-loader/Develop%20CI/develop)](https://github.com/litetex/predefined-cookie-loader/actions?query=workflow%3A%22Develop+CI%22) |
 
 ## Use cases
 ### Private browsing
